@@ -1,0 +1,2 @@
+log(window.x);
+f();

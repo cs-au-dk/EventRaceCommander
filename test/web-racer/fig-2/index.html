@@ -1,0 +1,19 @@
+<html>
+	<head>
+		<script src="../../../utils.js"></script>
+	</head>
+	<body>
+		<h3>A "variable race" on a DOM node property</h3>
+		<p>Expose the race:</p>
+		<ol>
+			<li>Close the alert box</li>
+			<li>Click on the input field and type some characters within 2.5 s</li>
+		</ol>
+		<p>Expected: the input value is not overwritten with 'City of Departure'.</p>
+
+		<hr />
+
+		<input type="text" id="depart" value="" />
+		<script src="a.js?delay=1000"></script>
+	</body>
+</html>

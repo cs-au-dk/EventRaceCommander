@@ -1,0 +1,21 @@
+<html>
+    <body>
+        <h1>Example</h1>
+        <script src="jquery.js"></script>
+        <script>
+        jQuery.ajax('index.html?delay=2000', {
+            success: function (data) {
+                window.namespace = ""; // write to sessionState
+            }
+        });
+        </script>
+        <script src="a.js?delay=1000"></script>
+        <script>
+        // New inline script forces a.js to load before the event handlers are registered
+        </script>
+
+        <pre id="log"></pre>
+        <button id="b1" onclick="track('x', 'CLICK A');">Button A</button>
+        <button id="b2" onclick="track('y', 'CLICK B');">Button B</button>
+    </body>
+</html>

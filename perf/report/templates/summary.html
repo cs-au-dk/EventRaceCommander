@@ -1,0 +1,37 @@
+<h3>
+  Performance Summary
+</h3>
+
+<ul class="nav nav-tabs" style="margin-bottom: 15px">
+  <li ng-repeat="metric in metrics" ng-class="{ 'active': metric.active }" ng-click="tab(metric, metrics); setMetric(metric)">
+    <a href>{{metric.name}}</a>
+  </li>
+</ul>
+
+<div class="tab-content">
+  <table class="table table-condensed">
+    <thead>
+      <tr>
+        <th style="white-space: nowrap">Web application</th>
+        <th ng-repeat="columnName in columnNames" ng-click="setBaseline(columnName)"
+          style="cursor: pointer; text-align: center"
+          colspan="3">{{columnName}}</th>
+        <th style="width: 100%"></th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="report in reports | orderBy : 'name'">
+        <td class="right">
+          <small><strong><a href="#/{{report.name}}">{{report.name}}</a></strong></small>
+        </td>
+        <td ng-repeat="column in columns"
+          ng-class="{ 'info': column.name === baseline, 'right': column.type == 'x' }" style="text-align: right">
+          <small ng-if="column.type == 'ms'">{{cell(report, column.name)}}ms</small>
+          <small ng-if="column.type == '+' && column.name !== baseline">{{cell(report, column.name, 'diff')}}</small>
+          <small ng-if="column.type == 'x' && column.name !== baseline">{{cell(report, column.name, 'factor')}}</small>
+        </td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+</div>

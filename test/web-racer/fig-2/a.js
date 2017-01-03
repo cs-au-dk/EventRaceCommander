@@ -1,0 +1,1 @@
+document.getElementById("depart").value = "City of Departure";

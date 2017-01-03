@@ -1,0 +1,43 @@
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <h3>A "HTML race", where DOM node access may occur before the node creation</h3>
+        <p>Expose the race:</p>
+        <ol>
+            <li>Close the alert box</li>
+            <li>Click on 'Send email' within 2.5 s</li>
+        </ol>
+        <p>Expected: the value of the input field is 'c.adamsen@partner.samsung.com'.</p>
+        
+        <hr />
+
+        <script>
+        function show(email) {
+            document.getElementById('o').value = email;
+        }
+        </script>
+        <p id="p"></p>
+        <script>
+        var anchor = document.createElement('a');
+        anchor.href = '#';
+        anchor.id = 'a1';
+        anchor.textContent = 'Send to Samsung email';
+        anchor.addEventListener('click', function (event) {
+            show('c.adamsen@partner.samsung.com');
+            event.preventDefault();
+        }, false);
+        document.getElementById('p').appendChild(anchor);
+        </script>
+        <script>
+            // Hack to make Protractor believe that the page has loaded
+            window.setTimeout(function() {
+                var script = document.createElement('script');
+                script.src = 'a.js?delay=1000';
+                script.async = true;
+                document.body.appendChild(script);
+            }, 0);
+        </script>
+    </body>
+</html>

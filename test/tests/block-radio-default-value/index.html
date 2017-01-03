@@ -1,0 +1,48 @@
+<html>
+    <head>
+        <script>
+            function log(msg) {
+                document.getElementById('log').appendChild(
+                        document.createTextNode(msg + '\n'));
+            }
+
+            function init() {
+                document.getElementById('r1').checked = true;
+            }
+        </script>
+    </head>
+    <body>
+        <div style="position: absolute; left: 250px">
+            <h3 style="margin-top: 0px">Log</h3>
+            <pre id="log"></pre>
+        </div>
+        <h3>Example</h3>
+        <p>
+            Select:
+            <input type="radio" name='radios' id="r1"
+                   onmousedown="log('A.mousedown')"
+                   onfocus="log('A.focus')"
+                   onmouseup="log('A.mouseup')"
+                   onclick="log('A.click')"
+                   onkeydown="log('A.keydown')"
+                   onkeypress="log('A.keypress')"
+                   onkeyup="log('A.keyup')"
+                   onblur="log('A.blur')"
+                   onchange="log('A.change')" /> A
+            <input type="radio" name='radios' id="r2"
+                   onmousedown="log('B.mousedown')"
+                   onfocus="log('B.focus')"
+                   onmouseup="log('B.mouseup')"
+                   onclick="log('B.click')"
+                   onkeydown="log('B.keydown')"
+                   onkeypress="log('B.keypress')"
+                   onkeyup="log('B.keyup')"
+                   onblur="log('B.blur')"
+                   onchange="log('B.change')" /> B
+        </p>
+        <script>
+            // Hack to make Protractor believe that the page has loaded
+            window.setTimeout(init, 1000);
+        </script>
+    </body>
+</html>

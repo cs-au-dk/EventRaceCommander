@@ -1,0 +1,27 @@
+<html>
+    <head>
+        
+    </head>
+    <body>
+        <pre id="log"></pre>
+        <script>
+        var log = "";
+        function f(delay, id) {
+            var xhr = new XMLHttpRequest();
+            xhr.onload = function (e) {
+                if (xhr.readyState == 4) { // DONE
+                    log += 'LOADED ' + id + '\n';
+                    document.getElementById('log').textContent = log;
+                }
+            };
+            xhr.open("GET", "index.html?delay=" + delay, true);
+            xhr.send();
+        }
+
+        f(4000, '1');
+        f(3000, '2');
+        f(2000, '3');
+        f(1000, '4');
+        </script>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        <div style="position: absolute; left: 250px">
+            <h3 style="margin-top: 0px">Log</h3>
+            <pre id="log"></pre>
+        </div>
+        <h1>Example</h1>
+        <script src="a.js?delay=2000" async></script>
+        <script>
+            var script = document.createElement('script');
+            script.src = 'a.js?delay=1000';
+            script.async = true;
+            document.head.appendChild(script);
+
+            script.addEventListener('load', function () {
+                // If the load event is not postponed until the execute event,
+                // then the function is not defined.
+                log('LOAD');
+            }, false);
+        </script>
+    </body>
+</html>

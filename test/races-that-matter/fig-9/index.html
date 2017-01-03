@@ -1,0 +1,14 @@
+<html>
+    <body>
+        <h1>Example</h1>
+        <script src="jquery.js"></script>
+        <div id="article"></div>
+        <script>
+        function getArticle(url) {
+            $('#article').load(url);
+        }
+        </script>
+        <a id="a1" href="javascript: getArticle('article1.txt?delay=2000')">Article 1</a>
+        <a id="a2" href="javascript: getArticle('article2.txt?delay=1000')">Article 2</a>
+    </body>
+</html>

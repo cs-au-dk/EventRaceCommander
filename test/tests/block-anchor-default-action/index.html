@@ -1,0 +1,28 @@
+<html>
+    <head>
+        <script>
+            function log(msg) {
+                document.getElementById('log').appendChild(
+                        document.createTextNode(msg + '\n'));
+            }
+
+            function init() {
+                document.getElementById('a1').addEventListener('click', function (evt) {
+                    evt.preventDefault();
+                }, false);
+            }
+        </script>
+    </head>
+    <body>
+        <div style="position: absolute; left: 250px">
+            <h3 style="margin-top: 0px">Log</h3>
+            <pre id="log"></pre>
+        </div>
+        <h3>Example</h3>
+        <p><a id="a1" href="javascript: log('Redirect!')">Visit my web page</a></p>
+        <script>
+            // Hack to make Protractor believe that the page has loaded
+            window.setTimeout(init, 1000);
+        </script>
+    </body>
+</html>

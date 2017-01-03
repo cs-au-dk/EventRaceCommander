@@ -1,0 +1,47 @@
+<html>
+    <head>
+        <title>Initialization races</title>
+    </head>
+    <body>
+        <img id="img1" src="img1.png?delay=1000" onclick="clickHandler()" />
+        <img id="img2" src="img2.png?delay=3000" onload="console.log(messages.onload);" />
+        <script>
+            var img1 = document.getElementById('img1');
+            var img2 = document.getElementById('img1');
+
+            // This is a low risk race, since the attribute assignment
+            // occurs immediately after the img element
+            img1.onload = function () {
+                console.log('img1.onload');
+
+                // This is a high risk race, since the attribute assignment
+                // occurs in a callback
+                img1.onload = function () {
+                    console.log('img1.onload');
+                };
+            };
+        </script>
+        <script src="a.js?delay=2000"></script>
+        <script>
+            // This is a high risk race, since the attribute assignment
+            // occurs after an external synchronous script
+            img1.onload = function () {
+                console.log('img1.onload');
+            };
+
+            window.setTimeout(function () {
+                // This is a high risk race, since the event handler registration
+                // happens in a callback
+                document.addEventListener('DOMContentLoaded', function () {
+                    console.log('document.DOMContentLoaded');
+                }, false);
+
+                // This is a high risk race, since the event handler registration
+                // happens in a callback
+                window.addEventListener('load', function () {
+                    console.log('window.onload');
+                }, false);
+            });
+        </script>
+    </body>
+</html>

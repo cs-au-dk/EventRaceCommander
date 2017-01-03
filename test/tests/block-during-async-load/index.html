@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function log(msg) {
+                document.getElementById('log').appendChild(
+                        document.createTextNode(msg + '\n'));
+            }
+        </script>
+    </head>
+    <body>
+        <div style="position: absolute; left: 250px">
+            <h3 style="margin-top: 0px">Log</h3>
+            <pre id="log"></pre>
+        </div>
+        <h1>Example</h1>
+        <button id="b" onclick="log('CLICK');">Button</button>
+        <script>
+            function ajax(delay, cb) {
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function (e) {
+                    if (xhr.readyState == 4) { // DONE
+                        cb && cb();
+                    }
+                };
+                xhr.open("GET", "index.html?delay=" + delay, true);
+                xhr.send();
+            }
+
+            var i = 1;
+
+            log('REQUEST ' + i);
+            ajax(2000, function () {
+                log('RESPONSE ' + i++);
+                log('REQUEST ' + i);
+                ajax(1000, function () {
+                    log('RESPONSE ' + i++);
+                });
+            });
+
+            document.addEventListener('DOMContentLoaded', function () {
+                log('DOMContentLoaded');
+            });
+        </script>
+        <!-- Delay the DOMContentLoaded event 1 sec -->
+        <script src="a.js?delay=1000"></script>
+        <button onclick="log('REQUEST ' + i); ajax(1000, log.bind(null, 'RESPONSE ' + i++));" id="a">AJAX</button>
+    </body>
+</html>

@@ -1,0 +1,32 @@
+<html>
+    <head></head>
+    <body>
+        <h1>Example</h1>
+        <pre id="log"></pre>
+        <script>
+        function init() {
+            ajax('index.html?delay=1000', true, null, write.bind(null, 'init'));
+        }
+        init();
+
+        function ajax(url, async, data, cb) {
+            var xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4 && xhr.status === 200) {
+                    cb(xhr.responseText);
+                }
+            };
+            xhr.open('GET', url, async);
+            xhr.send(data);
+        }
+
+        function write(id) {
+            document.getElementById('log').textContent += 'dtCookie = ' + id + '\n';
+        }
+
+        document.addEventListener('DOMContentLoaded', function() {
+            ajax('index.html', true, null, write.bind(null, 'DOMContentLoaded'));
+        });
+        </script>
+    </body>
+</html>

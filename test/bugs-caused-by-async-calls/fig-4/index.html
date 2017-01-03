@@ -1,0 +1,76 @@
+<html>
+    <head></head>
+    <body>
+        <h1>Galleries</h1>
+
+        <p>Expose the race:</p>
+        <ol>
+            <li>Click on a gallery and wait for it to load</li>
+            <li>Click on the other gallery</li>
+            <li>While the other gallery is loading, click on an image</li>
+        </ol>
+
+        <p>Expected: An AJAX request is sent to the server side, asking the server to delete the image.</p>
+        <p>Actual: An uncaught TypeError occurs, because the developer did not anticipate user events during the load request.</p>
+
+        <hr />
+
+        <script>
+            var container, log, thumbArray;
+
+            function populateThumbArray(url) {
+                thumbArray = Array();
+
+                var request = new XMLHttpRequest();
+                request.open("GET", url, true);
+                request.onreadystatechange = function() {
+                    if (request.readyState == 4) {
+                        thumbArray = JSON.parse(request.responseText);
+                        showThumbs();
+                    }
+                }
+                request.send(null);
+            }
+
+            function doDelete(i) {
+                var src = thumbArray[i].src;
+                log.appendChild(document.createTextNode('DELETE ' + src + '\n'));
+            }
+
+            function showThumbs() {
+                if (!container) {
+                    window.setTimeout(showThumbs, 50);
+                    return;
+                }
+
+                while (container.firstChild) {
+                    container.removeChild(container.firstChild);
+                }
+
+                for (var i = 0, n = thumbArray.length; i < n; i++) {
+                    var img = document.createElement('img');
+                    img.src = thumbArray[i].src;
+                    img.classList.add('thumb');
+                    (function (i) {
+                        img.addEventListener('click', function () {
+                            doDelete(i);
+                        }, false);
+                    }(i));
+                    container.appendChild(img);
+                }
+            }
+        </script>
+
+        <button onclick="populateThumbArray('gallery1.json?delay=1000');" id="a1">Gallery 1</button>
+        <button onclick="populateThumbArray('gallery2.json?delay=1000');" id="a2">Gallery 2</button>
+
+        <div id="container"></div>
+        <p>Click on an image to delete it.</p>
+        <pre id="log"></pre>
+
+        <script>
+            container = document.getElementById('container');
+            log = document.getElementById('log');
+        </script>
+    </body>
+</html>

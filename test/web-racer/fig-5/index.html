@@ -1,0 +1,12 @@
+<html>
+    <body>
+        <h3>An "event dispatch race", where the event handler registration may occur too late</h3>
+        <p>Expected: the status changes to 'Loaded'.</p>
+        
+        <hr />
+
+        <img id="i" src="img1.png?delay=1000" />
+        <p>Status: <output id="o">Loading</output></p>
+        <script src="a.js?delay=2000"></script>
+    </body>
+</html>

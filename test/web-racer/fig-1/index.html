@@ -1,0 +1,24 @@
+<html>
+    <body>
+        <script>
+            function log(msg) {
+                document.getElementById('log').appendChild(
+                        document.createTextNode(msg + '\n'));
+            }
+        </script>
+        <div style="position: absolute; left: 250px">
+            <h3 style="margin-top: 0px">Log</h3>
+            <pre id="log"></pre>
+        </div>
+        <h3>Example</h3>
+        <script src="a.js?delay=3000" async></script>
+        <script src="b.js?delay=2000" async></script>
+        <script>
+        ['c.js?delay=1000', 'd.js'].forEach(function (src) {
+            var element = document.createElement('script');
+            element.src = src;
+            document.body.appendChild(element);
+        });
+        </script>
+    </body>
+</html>

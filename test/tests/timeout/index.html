@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function log(msg) {
+                document.getElementById('log').appendChild(
+                        document.createTextNode(msg + '\n'));
+            }
+        </script>
+    </head>
+    <body>
+        <div style="position: absolute; left: 250px">
+            <h3 style="margin-top: 0px">Log</h3>
+            <pre id="log"></pre>
+        </div>
+        <h1>Example</h1>
+        <script>
+            log('TIMEOUT_REQUEST 1');
+            var id = window.setTimeout(function () {
+                log('TIMEOUT_RESPONSE 1');
+            }, 3000);
+            window.clearTimeout(id);
+
+            log('TIMEOUT_REQUEST 2');
+            window.setTimeout(function () {
+                log('TIMEOUT_RESPONSE 2');
+            }, 2000);
+
+            log('TIMEOUT_REQUEST 3');
+            window.setTimeout(function () {
+                log('TIMEOUT_RESPONSE 3');
+            }, 1000);
+        </script>
+    </body>
+</html>

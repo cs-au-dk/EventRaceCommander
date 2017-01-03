@@ -1,0 +1,35 @@
+<html>
+    <head>
+        <script>
+            function log(msg) {
+                document.getElementById('log').appendChild(
+                        document.createTextNode(msg + '\n'));
+            }
+
+            function init() {
+                document.getElementById('c1').checked = true;
+            }
+        </script>
+    </head>
+    <body>
+        <div style="position: absolute; left: 250px">
+            <h3 style="margin-top: 0px">Log</h3>
+            <pre id="log"></pre>
+        </div>
+        <h3>Example</h3>
+        <p>Select: <input type="checkbox" id="c1"
+                          onmousedown="log('mousedown')"
+                          onfocus="log('focus')"
+                          onmouseup="log('mouseup')"
+                          onclick="log('click')"
+                          onkeydown="log('keydown')"
+                          onkeypress="log('keypress')"
+                          onkeyup="log('keyup')"
+                          onblur="log('blur')"
+                          onchange="log('change')" /></p>
+        <script>
+            // Hack to make Protractor believe that the page has loaded
+            window.setTimeout(init, 2000);
+        </script>
+    </body>
+</html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!-- saved from url=(0041)http://cs.au.dk/~amoeller/AWP/events.html -->
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <title>HTML events</title>
+        <style>
+            div#outer { padding: 30px; background: red; width: 300px; }
+            div#middle { padding: 30px; background: green;text-align: center; }
+            span { padding: 10px; background: yellow; font-size: 30px; border: 2px solid; width: 50px; margin: 10px; }
+        </style>
+        <script>
+            function log(msg) {
+                document.getElementById('log').appendChild(
+                        document.createTextNode(msg + '\n'));
+            }
+
+            function msg(str) {
+                return function(e) {
+                    log("handler " + str + ", this=" + this.id + ", target=" + e.target.id);
+                };
+            }
+        </script>
+    </head>
+    <body>
+        <div style="position: absolute; left: 400px">
+            <h3 style="margin-top: 0px">Log</h3>
+            <pre id="log"></pre>
+        </div>
+        <div id="outer" onclick="msg('outer-inline').call(this, event)">
+            <div id="middle" onclick="msg('middle-inline').call(this, event)">
+                <span id="inner1" onclick="msg('inner1-inline').call(this, event)">A</span>
+                <span id="inner2" onclick="msg('inner2-inline').call(this, event)">W</span>
+                <span id="inner3" onclick="msg('inner3-inline').call(this, event)">P</span>
+            </div>
+        </div>
+        <script type="application/javascript">
+            document.getElementById("outer").addEventListener("click", msg("outer-false"), false);
+            document.getElementById("outer").addEventListener("click", msg("outer-true"), true);
+
+            document.getElementById("middle").addEventListener("click", msg("middle-false"), false);
+            document.getElementById("middle").addEventListener("click", msg("middle-true"), true);
+
+            document.getElementById("inner1").addEventListener("click", msg("inner1-false"), false);
+            document.getElementById("inner1").addEventListener("click", msg("inner1-true"), true);
+
+            document.getElementById("inner2").addEventListener("click", msg("inner2-false"), false);
+            document.getElementById("inner2").addEventListener("click", msg("inner2-true"), true);
+
+            document.getElementById("inner3").addEventListener("click", msg("inner3-false"), false);
+            document.getElementById("inner3").addEventListener("click", msg("inner3-true"), true);
+        </script>
+    </body>
+</html>

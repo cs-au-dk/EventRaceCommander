@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function log(msg) {
+                document.getElementById('log').appendChild(
+                        document.createTextNode(msg + '\n'));
+            }
+        </script>
+    </head>
+    <body>
+        <div style="position: absolute; left: 250px">
+            <h3 style="margin-top: 0px">Log</h3>
+            <pre id="log"></pre>
+        </div>
+        <h1>Example</h1>
+        <script>
+            function ajax() {
+                var xhr = new XMLHttpRequest();
+                xhr.open("GET", "index.html?delay=1000", true);
+                xhr.send();
+            }
+            ajax();
+        </script>
+        <button id="b" onclick="log('CLICK');">Button</button>
+    </body>
+</html>

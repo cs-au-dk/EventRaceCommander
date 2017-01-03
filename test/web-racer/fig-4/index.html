@@ -1,0 +1,12 @@
+<html>
+    <body>
+        <h3>A "function race", where the function may not be parsed before it is invoked</h3>
+        <p>Expected: the status changes to 'Loaded'.</p>
+
+        <hr />
+
+        <img id="i" src="img1.png?delay=1000" onload="window.loaded();" />
+        <p>Status: <output id="o">Loading</output></p>
+        <script src="a.js?delay=2000"></script>
+    </body>
+</html>

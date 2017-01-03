@@ -1,0 +1,59 @@
+<html>
+    <head>
+        <script>
+            function log(msg) {
+                document.getElementById('log').appendChild(
+                        document.createTextNode(msg + '\n'));
+            }
+
+            function init() {
+                var input = document.getElementById('i');
+
+                var _default = 'Enter search terms...';
+                function setDefault() {
+                    input.value = _default;
+                }
+
+                input.addEventListener('focus', function () {
+                    if (input.value === _default) {
+                        input.value = '';
+                    }
+                }, false);
+
+                input.addEventListener('blur', function () {
+                    if (!input.value) {
+                        setDefault();
+                    }
+                }, false);
+
+                setDefault();
+            }
+        </script>
+    </head>
+    <body>
+        <div style="position: absolute; left: 250px">
+            <h3 style="margin-top: 0px">Log</h3>
+            <pre id="log"></pre>
+        </div>
+        <h3>Example</h3>
+        <p>
+            Search:
+            <input type="text" id="i"
+                   onmousedown="log('mousedown')"
+                   onfocus="log('focus')"
+                   onmouseup="log('mouseup')"
+                   onchange="log('change')"
+                   onclick="log('click')"
+                   oninput="log('input')"
+                   onkeydown="log('keydown')"
+                   onkeypress="log('keypress')"
+                   onkeyup="log('keyup')"
+                   onblur="log('blur')"
+                   onchange="log('change')" />
+        </p>
+        <script>
+            // Hack to make Protractor believe that the page has loaded
+            window.setTimeout(init, 2000);
+        </script>
+    </body>
+</html>

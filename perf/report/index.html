@@ -1,0 +1,35 @@
+<!doctype>
+<html ng-app="reportApp">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Report</title>
+
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+
+    <!-- Angular -->
+    <script src="angular/angular.min.js"></script>
+    <script src="angular/angular-resource.min.js"></script>
+    <script src="angular/angular-route.min.js"></script>
+
+    <!-- dc.js -->
+    <link rel="stylesheet" href="chart/dc.css">
+    <script src="chart/d3.js"></script>
+    <script src="chart/crossfilter.js"></script>
+    <script src="chart/dc.js"></script>
+
+    <!-- App -->
+    <script src="report.js"></script>
+
+    <style>
+      tr.clickable td { cursor: pointer; }
+    </style>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <div ng-view></div>
+    </div>
+  </body>
+</html>

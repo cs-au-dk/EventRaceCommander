@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function log(msg) {
+                document.getElementById('log').appendChild(
+                        document.createTextNode(msg + '\n'));
+            }
+        </script>
+    </head>
+    <body>
+        <div style="position: absolute; left: 250px">
+            <h3 style="margin-top: 0px">Log</h3>
+            <pre id="log"></pre>
+        </div>
+        <h1>Example</h1>
+        <script>
+            function ajax() {
+                log('REQUEST');
+
+                var xhr = new XMLHttpRequest();
+                xhr.onerror = function (e) {
+                    log('ERROR');
+                };
+                xhr.open("GET", "http://localhost:8081/index.html", true);
+                xhr.send();
+            }
+        </script>
+        <script src="a.js" async></script>
+        <button id="b" onclick="log('CLICK'); ajax();">Button</button>
+    </body>
+</html>

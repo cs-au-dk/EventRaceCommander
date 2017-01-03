@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <script>
+            function log(msg) {
+                document.getElementById('log').appendChild(
+                        document.createTextNode(msg + '\n'));
+            }
+
+            function init() {
+                document.getElementById('s').selectedIndex = 4;
+            }
+        </script>
+    </head>
+    <body>
+        <div style="position: absolute; left: 250px">
+            <h3 style="margin-top: 0px">Log</h3>
+            <pre id="log"></pre>
+        </div>
+        <h3>Example</h3>
+        <p>
+            Rating:
+            <select id="s"
+                    onmousedown="log('mousedown')"
+                    onfocus="log('focus')"
+                    onmouseup="log('mouseup')"
+                    onclick="log('click')"
+                    onkeydown="log('keydown')"
+                    onkeypress="log('keypress')"
+                    onkeyup="log('keyup')"
+                    onblur="log('blur')"
+                    onchange="log('change')">
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+            </select>
+        </p>
+        <script>
+            // Hack to make Protractor believe that the page has loaded
+            window.setTimeout(init, 2000);
+        </script>
+    </body>
+</html>

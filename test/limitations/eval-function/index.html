@@ -1,0 +1,31 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+        <pre id="log"></pre>
+        <pre id="code" style="display: none">
+            var log = "";
+            function f(delay, id) {
+                var xhr = new XMLHttpRequest();
+                xhr.onreadystatechange = function () {
+                    if (xhr.readyState == 4) { // DONE
+                        log += 'LOADED ' + id + '\n';
+                        document.getElementById('log').textContent = log;
+                    }
+                };
+                xhr.open("GET", "index.html?delay=" + delay, true);
+                xhr.send();
+            }
+
+            f(4000, '1');
+            f(3000, '2');
+            f(2000, '3');
+            f(1000, '4');
+        </pre>
+        <script>
+            var f = new Function(document.getElementById("code").textContent);
+            f();
+        </script>
+    </body>
+</html>

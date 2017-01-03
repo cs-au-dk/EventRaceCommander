@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function log(msg) {
+                document.getElementById('log').appendChild(
+                        document.createTextNode(msg + '\n'));
+            }
+        </script>
+    </head>
+    <body>
+        <div style="position: absolute; left: 250px">
+            <h3 style="margin-top: 0px">Log</h3>
+            <pre id="log"></pre>
+        </div>
+        <h1>Example</h1>
+        <div id="div">
+            <div id="child"></div>
+        </div>
+        <script>
+            document.write(
+                    '<scr'+'ipt src="a.js?delay=4000" async><\/script>' +
+                    '<scr'+'ipt src="b.js?delay=3000" async></scr'+'ipt>');
+
+            var div = document.getElementById('div');
+            var child = document.getElementById('child');
+
+            var c = document.createElement('script');
+            c.src = 'c.js?delay=2000';
+            c.async = true;
+            div.appendChild(c);
+
+            var d = document.createElement('script');
+            d.src = 'd.js?delay=1000';
+            d.async = true;
+            div.insertBefore(d, child);
+
+            var e = document.createElementNS('http://www.w3.org/1999/xhtml', 'html:script');
+            e.src = 'e.js';
+            e.async = true;
+            div.replaceChild(e, child);
+        </script>
+    </body>
+</html>

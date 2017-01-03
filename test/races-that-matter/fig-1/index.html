@@ -1,0 +1,38 @@
+<html>
+    <body>
+        <h1>Example</h1>
+        <pre id="log"></pre>
+        <script>
+        function write(num) {
+            // document.cookie = "var1=" + num;
+            document.getElementById('log').textContent += 'WRITE ' + num + '\n';
+        }
+
+        // Changed async=false to async=true in the following
+        // (compared to the example in the paper).
+        // Otherwise the code does not race?!
+        var xhr = new XMLHttpRequest();
+        xhr.open("GET", "index.html?delay=1000", true);
+        xhr.onreadystatechange = function () {
+            var foo = "bar";
+            if (xhr.readyState === 4) {
+                write(1);
+            }
+        };
+        xhr.send();
+        </script>
+        <script>
+        write(2);
+        </script>
+        <script>
+        var xhr2 = new XMLHttpRequest();
+        xhr2.open("GET", "index.html", true);
+        xhr2.onreadystatechange = function () {
+            if (xhr2.readyState === 4) {
+                write(3);
+            }
+        };
+        xhr2.send();
+        </script>
+    </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function log(msg) {
+                document.getElementById('log').appendChild(
+                        document.createTextNode(msg + '\n'));
+            }
+
+            document.addEventListener('DOMContentLoaded', function() { log('document.DOMContentLoaded'); }, false);
+        </script>
+    </head>
+    <body>
+        <div style="position: absolute; left: 250px">
+            <h3 style="margin-top: 0px">Log</h3>
+            <pre id="log"></pre>
+        </div>
+        <h1>Example</h1>
+        <img id="img1" src="img1.png?delay=3000" onload="log('img1.load');" />
+        <script>
+            var img1 = document.getElementById('img1'), img2 = document.createElement('img');
+            img2.onload = function () { log('img2.load'); };
+            img2.src = 'img1.png?delay=2000';
+            img1.parentNode.insertBefore(img2, img1.nextSibling);
+            document.write('<img src="img1.png?delay=1000" onload="log(\'img3.load\');" />');
+        </script>
+        <script src="a.js?delay=4000"></script>
+    </body>
+</html>

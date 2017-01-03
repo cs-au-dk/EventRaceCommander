@@ -1,0 +1,15 @@
+<html>
+    <body>
+        <h3>A "variable race" on a global variable</h3>
+        <p>Expected: the output field shows 'Loaded' after 1 s.</p>
+        
+        <hr />
+
+        <p>Status: <output id="o">Loading</output></p>
+        <script>
+        window.status = 'Loading';
+        </script>
+        <script src="a.js" async></script>
+        <script src="b.js?delay=1000"></script>
+    </body>
+</html>

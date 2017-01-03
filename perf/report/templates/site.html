@@ -1,0 +1,67 @@
+<h3 style="cursor: pointer">
+  {{site.info.url}} (<a href="#/">back to summary</a>)
+</h3>
+
+<ul class="nav nav-tabs" style="margin-bottom: 15px">
+  <li ng-class="{ 'active': site.summary.active }" ng-click="tab(site.summary, site.ids)">
+    <a href>Summary</a>
+  </li>
+  <li ng-repeat="id in site.ids" ng-class="{ 'active': id.active }" ng-click="tab(id, site.summary, site.ids)">
+    <a href>{{id.name}}</a>
+  </li>
+</ul>
+
+<div class="tab-content">
+  <div ng-if="site.summary.active" class="active tab-pane">
+    <table class="table table-condensed">
+      <thead>
+        <tr>
+          <th rowspan="2">Metric</th>
+          <th ng-repeat="id in site.ids" ng-click="setSummaryBaseline(site, id.name)"
+            style="cursor: pointer; text-align: center"
+            colspan="{{id.name == site.summary.baseline ? 1 : 3}}">{{id.name}}</th>
+          <th style="width: 100%"></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="row in site.summary.rows | filter: showRow | orderBy : 'name'" ng-class="{ active: row.name === selectedMetric }" ng-click="selectMetric(row.name)" class="clickable">
+          <td>
+            <small><strong>{{row.name}}</strong></small>
+          </td>
+          <td ng-repeat="col in getSummaryCols(site)"
+            ng-if="col.name !== site.summary.baseline || col.type == 'ms'"
+            ng-class="{ 'info': col.name === site.summary.baseline }" style="text-align: right">
+            <small ng-if="col.type == 'ms' && row[col.name].avg">{{row[col.name].avg}}ms</small>
+            <small ng-if="col.type != 'ms' && col.name !== site.summary.baseline">{{getCell(site, col.name, row, col.type)}}</small>
+          </td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div ng-repeat="id in site.ids" ng-if="id.active" class="active tab-pane">
+    <ul class="nav nav-tabs" style="margin-bottom: 15px">
+      <li ng-repeat="iteration in id.iterations | orderBy: nameAsNumber" ng-class="{ 'active': iteration.active }" ng-click="tab(iteration, id.iterations)">
+        <a href>{{iteration.name}}</a>
+      </li>
+    </ul>
+
+    <div class="tab-content">
+      <div ng-repeat="iteration in id.iterations" ng-if="iteration.active" class="active tab-pane">
+        <table class="table table-condensed">
+          <tr ng-repeat="metric in iteration.heatMaps | filter: showRow | orderBy : 'name'">
+            <td>
+              <small><strong>{{metric.name}}</strong></small>
+            </td>
+            <td ng-style="{ 'color': metric.last ? 'red' : 'black' }" style="text-align: right">
+              <small>{{metric.finished}}ms</small>
+            </td>
+            <td style="width: 100%"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="boxplot" ng-if="site.summary.active"></div>

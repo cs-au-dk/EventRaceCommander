@@ -1,0 +1,838 @@
+[
+  { "name": "walmart.com", "url": "http://www.walmart.com/",
+    "specifications": [
+      { "id": "original",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "timeout": 5000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--original", "--extend-config", "--minify"]
+      },
+      { "id": "app-independent-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "timeout": 5000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      },
+      { "id": "empty-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "none",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "timeout": 5000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      }
+    ]
+  },
+  { "name": "walmart.com-click", "url": "http://www.walmart.com/",
+    "specifications": [
+      { "id": "app-independent-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "timeout": 5000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      },
+      { "id": "app-specific-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-specific",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "timeout": 5000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      }
+    ]
+  },
+  { "name": "exxon.com", "url": "https://www.exxon.com/",
+    "specifications": [
+      { "id": "original",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--original", "--extend-config", "--minify"]
+      },
+      { "id": "app-independent-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      },
+      { "id": "empty-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "none",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      }
+    ]
+  },
+  { "name": "chevron.com", "url": "https://www.chevron.com/",
+    "specifications": [
+      { "id": "original",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--original", "--extend-config", "--minify"]
+      },
+      { "id": "app-independent-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      },
+      { "id": "empty-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "none",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      }
+    ]
+  },
+  { "name": "berkshirehathaway.com", "url": "http://berkshirehathaway.com/",
+    "specifications": [
+      { "id": "original",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--original", "--extend-config", "--minify"]
+      },
+      { "id": "app-independent-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      },
+      { "id": "empty-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "none",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      }
+    ]
+  },
+  { "name": "apple.com", "url": "http://www.apple.com/",
+    "specifications": [
+      { "id": "original",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--original", "--extend-config", "--minify"]
+      },
+      { "id": "app-independent-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      },
+      { "id": "empty-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "none",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      }
+    ]
+  },
+  { "name": "gm.com", "url": "http://www.gm.com/index.html",
+    "specifications": [
+      { "id": "original",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--original", "--extend-config", "--minify"]
+      },
+      { "id": "app-independent-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      },
+      { "id": "empty-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "none",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      }
+    ]
+  },
+  { "name": "gm.com-search-results", "url": "https://www.gm.com/search-results.html?q=chevrolet",
+    "specifications": [
+      { "id": "original",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--original", "--extend-config", "--minify"]
+      },
+      { "id": "app-independent-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      },
+      { "id": "empty-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "none",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      }
+    ]
+  },
+  { "name": "phillips66.com", "url": "http://www.phillips66.com/EN/Pages/index.aspx",
+    "specifications": [
+      { "id": "original",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--original", "--extend-config", "--minify"]
+      },
+      { "id": "app-independent-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      },
+      { "id": "empty-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "none",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      }
+    ]
+  },
+  { "name": "ge.com", "url": "http://www.ge.com/",
+    "specifications": [
+      { "id": "original",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--original", "--extend-config", "--minify"]
+      },
+      { "id": "app-independent-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      },
+      { "id": "empty-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "none",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      }
+    ]
+  },
+  { "name": "ge.com-opportunities", "url": "http://www.ge.com/careers/opportunities?country=United%2BStates",
+    "specifications": [
+      { "id": "original",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--original", "--extend-config", "--minify"]
+      },
+      { "id": "app-independent-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      },
+      { "id": "empty-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "none",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      }
+    ]
+  },
+  { "name": "ge.com-search", "url": "http://www.ge.com/search?search_block_form=ge+imagination",
+    "specifications": [
+      { "id": "original",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--original", "--extend-config", "--minify"]
+      },
+      { "id": "app-independent-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      },
+      { "id": "empty-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "none",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      }
+    ]
+  },
+  { "name": "ford.com", "url": "http://www.ford.com/",
+    "specifications": [
+      { "id": "original",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "timeout": 5000, "max-timeout": 20000, "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--original", "--extend-config", "--minify"]
+      },
+      { "id": "app-independent-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "timeout": 5000, "max-timeout": 20000, "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      },
+      { "id": "empty-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "none",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "timeout": 5000, "max-timeout": 20000, "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      }
+    ]
+  },
+  { "name": "cvshealth.com", "url": "https://www.cvshealth.com/",
+    "specifications": [
+      { "id": "original",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--original", "--extend-config", "--minify"]
+      },
+      { "id": "app-independent-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      },
+      { "id": "empty-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "none",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      }
+    ]
+  },
+  { "name": "mckesson.com", "url": "http://www.mckesson.com/#?q=foo",
+    "specifications": [
+      { "id": "original",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--original", "--extend-config", "--minify"]
+      },
+      { "id": "app-independent-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      },
+      { "id": "empty-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "none",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      }
+    ]
+  },
+  { "name": "att.com", "url": "https://www.att.com/",
+    "specifications": [
+      { "id": "original",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--original", "--extend-config", "--minify"]
+      },
+      { "id": "app-independent-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      },
+      { "id": "empty-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "none",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      }
+    ]
+  },
+  { "name": "att.com-postpone", "url": "https://www.att.com/",
+    "specifications": [
+      { "id": "app-independent-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_BROADCAST": "true",
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "timeout": 17500, "max-timeout": 17500, "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--extend-config", "--minify"]
+      }
+    ]
+  },
+  { "name": "att.com-postpone", "url": "https://www.att.com/",
+    "specifications": [
+      { "id": "app-specific-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_BROADCAST": "true",
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-specific",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "timeout": 17500, "max-timeout": 17500, "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--extend-config", "--minify"]
+      }
+    ]
+  },
+  { "name": "valero.com", "url": "https://www.valero.com/en-us",
+    "specifications": [
+      { "id": "original",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "timeout": 5000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--original", "--extend-config", "--minify"]
+      },
+      { "id": "app-independent-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "timeout": 5000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      },
+      { "id": "empty-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "none",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "timeout": 5000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      }
+    ]
+  },
+  { "name": "unitedhealthgroup.com", "url": "http://www.unitedhealthgroup.com/",
+    "specifications": [
+      { "id": "original",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--original", "--extend-config", "--minify"]
+      },
+      { "id": "app-independent-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      },
+      { "id": "empty-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "none",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      }
+    ]
+  },
+  { "name": "verizonwireless.com", "url": "http://www.verizonwireless.com/",
+    "specifications": [
+      { "id": "original",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--original", "--extend-config", "--minify"]
+      },
+      { "id": "app-independent-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      },
+      { "id": "empty-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "none",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      }
+    ]
+  },
+  { "name": "amerisourcebergen.com", "url": "http://www.amerisourcebergen.com/abcnew/",
+    "specifications": [
+      { "id": "original",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--original", "--extend-config", "--minify"]
+      },
+      { "id": "app-independent-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      },
+      { "id": "empty-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "none",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      }
+    ]
+  },
+  { "name": "fanniemae.com", "url": "http://www.fanniemae.com/portal/index.html",
+    "specifications": [
+      { "id": "original",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "tolerated-pending-network": 1,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--original", "--extend-config", "--minify"]
+      },
+      { "id": "app-independent-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "tolerated-pending-network": 1,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      },
+      { "id": "empty-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "none",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "tolerated-pending-network": 1,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      }
+    ]
+  },
+  { "name": "costco.com", "url": "http://www.costco.com/",
+    "specifications": [
+      { "id": "original",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "timeout": 5000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--original", "--extend-config", "--minify"]
+      },
+      { "id": "app-independent-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "timeout": 5000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      },
+      { "id": "empty-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "none",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      }
+    ]
+  },
+  { "name": "hp.com", "url": "http://www.hp.com/",
+    "specifications": [
+      { "id": "original",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--original", "--extend-config", "--minify"]
+      },
+      { "id": "app-independent-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      },
+      { "id": "empty-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "none",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "warmup-timeout": 45000,
+        "proxyArgs": ["--cache", "--disable-timers-on-load", "--extend-config", "--minify"]
+      }
+    ]
+  },
+  { "name": "kroger.com", "url": "https://www.kroger.com/",
+    "specifications": [
+      { "id": "original",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "timeout": 5000,
+        "proxyArgs": ["--cache", "--disable-intervals-on-load", "--original", "--extend-config", "--minify"]
+      },
+      { "id": "app-independent-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "app-independent",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "timeout": 5000,
+        "proxyArgs": ["--cache", "--disable-intervals-on-load", "--extend-config", "--minify"]
+      },
+      { "id": "empty-repair",
+        "env": {
+          "EVENT_RACE_COMMANDER_CDN": "false",
+          "EVENT_RACE_COMMANDER_MINIFY": "true",
+          "EVENT_RACE_COMMANDER_POLICY": "none",
+          "EVENT_RACE_COMMANDER_DISABLE": "true"
+        },
+        "timeout": 5000,
+        "proxyArgs": ["--cache", "--disable-intervals-on-load", "--extend-config", "--minify"]
+      }
+    ]
+  }
+]
